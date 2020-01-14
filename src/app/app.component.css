@@ -1,0 +1,14 @@
+.main-container {
+    display: flex;
+    height: 100%;
+    background: black;
+    overflow: auto;
+}
+
+.align-center {
+    padding-top: 10%;
+}
+
+.form-area {
+    padding-top: 10%;
+}
