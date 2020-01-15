@@ -7,7 +7,7 @@ import {SignupComponent} from './auth/signup/signup.component';
 import {AppRoutingModule} from "./auth/app-routing.module";
 import { HomeComponent } from './home/home.component';
 import {CommonModule} from "@angular/common";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
     declarations: [
@@ -20,7 +20,8 @@ import {FormsModule} from "@angular/forms";
         BrowserModule,
         AppRoutingModule,
         CommonModule,
-        FormsModule
+        FormsModule,
+        ReactiveFormsModule
     ],
     providers: [],
     bootstrap: [AppComponent]
