@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {AuthService} from "../auth.service";
+import {NgForm} from "@angular/forms";
 
 @Component({
     selector: 'app-signin',
@@ -8,6 +9,7 @@ import {AuthService} from "../auth.service";
 })
 export class SigninComponent implements OnInit {
     errorMsg;
+    model: any = {};
 
     constructor(private authSerivce: AuthService) {
     }
@@ -15,8 +17,11 @@ export class SigninComponent implements OnInit {
     ngOnInit() {
     }
 
-    authenticate() {
-        if (!this.authSerivce.authenticate()) {
+    authenticate(form: NgForm) {
+        const email = form.value.email;
+        const password = form.value.password;
+
+        if (!this.authSerivce.authenticate(email, password)) {
             this.errorMsg = "Password incorrect or User does not exists";
         }
     }

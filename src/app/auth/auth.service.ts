@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {Subject} from "rxjs/internal/Subject";
-import {Observable} from "rxjs";
 
 @Injectable({
     providedIn: 'root'
@@ -12,7 +11,8 @@ export class AuthService {
     constructor() {
     }
 
-    authenticate() {
+    authenticate(email, password) {
+        //Call the http rest endpoint to validate User
         this.userLoggedIn.next(true);
         return true;
     }
